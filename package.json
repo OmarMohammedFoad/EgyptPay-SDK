@@ -1,15 +1,27 @@
 {
-  "name": "paymentproviders",
+  "name": "egyptpay-sdk",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/server.js",
+  "description": "Unified Payment Gateway Adapter for Egypt (Paymob, PayTabs)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
-    "dev": "nodemon --watch src --exec ts-node src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "egypt",
+    "payment",
+    "gateway",
+    "typescript",
+    "Paymob",
+    "PayTabs",
+    "SDK"
+  ],
+  "author": "Omar Fouad ",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
@@ -25,5 +37,9 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^4.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OmarMohammedFoad/EgyptPay-SDK"
   }
 }

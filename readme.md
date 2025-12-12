@@ -1,10 +1,9 @@
 # 🇪🇬 EgyptPay SDK: Unified Payment Gateway for Egypt
 
-**EgyptPay** is a robust, type-safe TypeScript library that unifies multiple Egyptian payment gateways (Paymob, PayTabs, Fawry) into a single, standardized interface. It is designed using the **Adapter Design Pattern** to solve the problem of API fragmentation in the Egyptian market.
+**EgyptPay** is a robust, type-safe TypeScript library that unifies multiple Egyptian payment gateways (Paymob, PayTabs,...) into a single, standardized interface. It is designed using the **Adapter Design Pattern** to solve the problem of API fragmentation in the Egyptian market.
 
 ## 🚀 The Problem
 Integrating payments in Egypt is painful. Every provider has a different implementation:
-- **Fawry** requires complex SHA-256 signature hashing.
 - **Paymob** requires a 3-step authentication chain (Auth -> Order -> Key).
 - **PayTabs** requires specific headers and payload structures.
 
@@ -20,7 +19,7 @@ I built this project to master advanced software architecture principles. Here a
 ### 1. Adapter Pattern (Structural)
 **Why?** To make incompatible interfaces work together.
 - **Implementation:** I created a generic contract `IPaymentGateway` with a standard `initiatePayment()` method.
-- **Result:** The core application doesn't know (or care) if it's talking to Paymob or Fawry. It just sends a standard request, and the specific *Adapter* handles the translation.
+- **Result:** The core application doesn't know (or care) if it's talking to Paymob or Paytaps. It just sends a standard request, and the specific *Adapter* handles the translation.
 
 ### 2. Factory Pattern (Creational)
 **Why?** To simplify object creation.
