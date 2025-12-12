@@ -1,0 +1,46 @@
+import { EgyptPay } from "./index";
+
+
+
+const API_KEY = "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2TVRBMk16YzNOU3dpYm1GdFpTSTZJbWx1YVhScFlXd2lmUS4xb0p0NTlLcDhpbTF2TTRXeGxRM25WNUVjelBKTnVqLVotaTV4U2RZTldrV0QzMmdmRlE1ZHMtYUg4Skx3dFhpMkNEREdsMzMtODJFaVpiSkRfdmZIUQ== ";
+const INTEGRATION_ID = "5215117";
+const IFRAME_ID = "943918";
+const PROFILE_ID = "131118";
+const SERVER_KEY = "SMJ9MRNRRZ-JHDMLJM9TL-WLNKMKHMG2";
+async function main() {
+
+  const egyptPay = new EgyptPay({
+    credentials: {
+      profileId: PROFILE_ID,
+      serverKey: SERVER_KEY,
+    },
+    provider: "PayTabs"
+  });
+
+
+  try {
+
+    const res = await egyptPay.getGateway().initiatePayment({
+      amount: 100.00, // 100 EGP
+      currency: 'EGP',
+      orderId: 'ORDER_' + Date.now(), // Unique ID
+      description: 'Test Payment',
+      customer: {
+        name: 'Ahmed Mohamed',
+        email: 'test@paymob.com',
+        phone: '+201000000000'
+      },
+      callbackUrl: 'https://google.com'
+    });
+
+
+    console.log("✅ Success!");
+    console.log("🔗 Payment Link:", res.paymentUrl);
+  } catch (error) {
+    console.error("❌ Error:", error);
+  }
+}
+
+main();
+
+
