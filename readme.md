@@ -38,4 +38,4 @@ I built this project to master advanced software architecture principles. Here a
 ## 📦 Installation
 
 ```bash
-npm install egypt-payment-sdk
+npm i egyptpay-sdk
