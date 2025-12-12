@@ -38,4 +38,4 @@ jobs:
       # 2. Publish with Public Access
       - run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.automation}} # Ensure this matches your GitHub Secret name
+          NODE_AUTH_TOKEN: ${{secrets.AUTOMATION}} # Ensure this matches your GitHub Secret name
